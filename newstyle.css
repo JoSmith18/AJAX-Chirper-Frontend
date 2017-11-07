@@ -1,0 +1,82 @@
+body {
+    background-color: rgb(181, 181, 181);
+}
+.authorName {
+    color: black;
+    font-size: 14;
+}
+
+hr {
+    color: black;
+}
+
+.img {
+    border-radius: 50%;
+    width: 200px;
+    margin-top: -150px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: white;
+}
+
+.chirpimg {
+    border-radius: 50%;
+    width: 50px;
+}
+
+.jumbotron,
+h1 {
+    border-radius: 0;
+    background-color: #317eac;
+    color: white;
+    font-family: 'Bree Serif', serif;
+    text-align: center;
+}
+.container .jumbotron {
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.whitebg {
+    background-color: white;
+    padding: 10px;
+}
+
+table {
+    margin: auto;
+}
+
+td,
+th {
+    font-size: 20px;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#tablebg {
+    margin-top: 45px;
+    width: 100%;
+    background-color: white;
+    color: #317eac;
+}
+
+label {
+    color: #317eac;
+    font-size: 1.5em;
+}
+
+.btn {
+    background-color: #317eac;
+    color: white;
+}
+
+.mybtn {
+    text-align: center;
+}
+
+.emojee {
+    font-size: 2.5em;
+    color: #317eac;
+}
