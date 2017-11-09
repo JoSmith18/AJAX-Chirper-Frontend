@@ -23,6 +23,7 @@
             <h1>Chirper
                 <i class="fa fa-twitter fa-flip-vertical" aria-hidden="true"></i>
             </h1>
+
             <div id="tablebg">
                 <table>
                     <thead>
@@ -33,10 +34,6 @@
                         <th></th>
                         <th></th>
                         <th></th>
-                        <th>
-                            <button class="btn" style="margin-top: 25px;
-                            border-radius: 40%; background-color: white; color: #317eac; border-color:#317eac">Follow</button>
-                        </th>
                     </thead>
                     <tbody>
                         <tr>
@@ -48,15 +45,16 @@
                     </tbody>
                 </table>
             </div>
+            <button class="btn btn-lg" onclick="logout()" style="border-color: white">Log Out</button>
         </div>
         <div class="col-lg-3 sidenav" id="personalinfo">
         </div>
         <div class="col-lg-6">
             <div class="whitebg">
 
-                <form onsubmit="push">
+                <form id="writechirp" hidden>
                     <div class="form-group">
-                        <label for="comment">What's chirpin'?
+                        <label class="chirp-label" for="comment">What's chirpin'?
                             <i class="fa fa-commenting-o" aria-hidden="true"></i>
                         </label>
                         <textarea class="form-control" id="comment" rows="3" maxlength="140"></textarea>
@@ -81,18 +79,21 @@
             </div>
 
             <div id="chirps" class="whitebg">
-                Loading...
+                <i class="fa fa-spinner fa-spin fa-5x fa-fw"></i>
             </div>
         </div>
         <div class="col-lg-3">
             <div class="row">
                 <h3 class="whitebg">You May Also Like:</h3>
             </div>
-            <div id="alsolike">Loading...</div>
+            <div id="alsolike">
+                <i class="fa fa-spinner fa-spin fa-5x fa-fw"></i>
+            </div>
         </div>
     </div>
     <script src=" https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
         crossorigin="anonymous "></script>
+    <script src="https://unpkg.com/jquery"></script>
     <script src="index.js"></script>
 </body>
 

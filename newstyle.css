@@ -62,7 +62,7 @@ th {
     color: #317eac;
 }
 
-label {
+.chirp-label {
     color: #317eac;
     font-size: 1.5em;
 }
@@ -70,6 +70,7 @@ label {
 .btn {
     background-color: #317eac;
     color: white;
+    border-radius: 100px;
 }
 
 .mybtn {
@@ -79,4 +80,10 @@ label {
 .emojee {
     font-size: 2.5em;
     color: #317eac;
+}
+
+.signup-btn {
+    border-radius: 100px;
+    width: 392px;
+    border: 1px solid #317eac;
 }
