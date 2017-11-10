@@ -134,9 +134,18 @@ function pushChirp() {
         },
         message: msg
     };
-    PAGE_DATA.chirps.splice(0, 0, chirpobj);
-    $('#chirps').html(makeChirps());
-    $('#comment').val('');
+    $.post(
+        'https://bcca-chirper.herokuapp.com/api/chirp/',
+        JSON.stringify({ message: chirpobj.message })
+    )
+        .then(function(response) {
+            PAGE_DATA.chirps.splice(0, 0, chirpobj);
+            $('#chirps').html(makeChirps());
+            $('#comment').val('');
+        })
+        .catch(function(response) {
+            $('#chirps').html('You thought it worked !!');
+        });
 }
 
 function loadUserInfo() {
