@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -28,7 +27,7 @@
                     <a href="homescreen.html">Home</a>
                 </li>
                 <li class="active">
-                    <a onclick="go(response)" id="mypage">My Page</a>
+                    <a onclick="go()">My Page</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -57,60 +56,13 @@
             <h1>Chirper
                 <i class="fa fa-twitter fa-flip-vertical" aria-hidden="true"></i>
             </h1>
-
-            <div id="tablebg">
-                <table>
-                    <thead>
-                        <th>Tweets</th>
-                        <th>Following</th>
-                        <th>Followers</th>
-                        <th>Likes</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td id="tweets"></td>
-                            <td id="following"></td>
-                            <td id="followers"></td>
-                            <td id="likes"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
         </div>
         <div class="col-lg-3 sidenav" id="personalinfo">
         </div>
+
         <div class="col-lg-6">
-            <div class="whitebg">
-
-                <form id="writechirp" hidden>
-                    <div class="form-group">
-                        <label class="chirp-label" for="comment">What's chirpin'?
-                            <i class="fa fa-commenting-o" aria-hidden="true"></i>
-                        </label>
-                        <textarea class="form-control" id="comment" rows="3" maxlength="140"></textarea>
-                        <center>
-                            <span class="emojee" onclick="addEmoji('😁')">😁</span>
-                            <span class="emojee" onclick="addEmoji('😂')">😂</span>
-                            <span class="emojee" onclick="addEmoji('😠')">😠</span>
-                            <span class="emojee" onclick="addEmoji('😤')">😤</span>
-                            <span class="emojee" onclick="addEmoji('🙈')">🙈</span>
-                            <span class="emojee" onclick="addEmoji('💗')">💗</span>
-                        </center>
-
-
-                    </div>
-
-                    <div class="mybtn">
-                        <button class="btn btn-lg" value="Chirp" id="submit">Chirp on!
-                            <i class="fa fa-twitter fa-flip-vertical" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                </form>
-            </div>
+            <!-- <div class="whitebg">
+                </div> -->
 
             <div id="chirps" class="whitebg">
                 <i class="fa fa-spinner fa-spin fa-5x fa-fw"></i>
@@ -125,10 +77,11 @@
             </div>
         </div>
     </div>
+
     <script src=" https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
         crossorigin="anonymous "></script>
     <script src="https://unpkg.com/jquery"></script>
-    <script src="feed.js"></script>
+    <script src="other-feed.js"></script>
 </body>
 
 </html>

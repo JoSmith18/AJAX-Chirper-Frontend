@@ -7,7 +7,7 @@ $('#user-search').on('submit', function search(event) {
         'https://bcca-chirper.herokuapp.com/api/' + $('#username').val() + '/'
     )
         .then(function handleFeedResponse(response) {
-            window.location.replace('feed.html?username=' + username);
+            window.location.replace('other-feed.html?username=' + username);
         })
         .catch(function() {
             $('.container').html('<h1>' + username + 'does not exist.</h1>');
@@ -43,7 +43,11 @@ function trends() {
             PAGE_DATA.articles = response.articles;
             updateArticleView();
         })
-        .catch(console.log);
+        .catch(function(response) {
+            $('#articles').html(
+                '<i class="fa fa-spinner fa-spin fa-5x fa-fw"></i>'
+            );
+        });
 }
 
 function main() {

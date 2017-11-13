@@ -47,14 +47,11 @@ function getM(num) {
 // }
 
 function makeChirps() {
-    // var count = 0;
+    var count = 0;
     var newdata = '';
-    // while (count < PAGE_DATA.chirps.length) {
-    //     newdata += returnChirps(count);
-    //     count += 1;
-    // }
-    for (var c = PAGE_DATA.chirps.length - 1; c >= 0; c--) {
-        newdata += returnChirps(c);
+    while (count < PAGE_DATA.chirps.length) {
+        newdata += returnChirps(count);
+        count += 1;
     }
     return newdata;
 }
@@ -154,6 +151,14 @@ function pushChirp() {
         });
 }
 
+function go(response) {
+    PAGE_DATA = response;
+    console.log(PAGE_DATA);
+    $('#mypage').attr(
+        'href',
+        'feed.html?username=' + PAGE_DATA.chirper.username
+    );
+}
 function loadUserInfo() {
     $('#tweets').text('0');
     $('#following').text('0');
@@ -167,6 +172,7 @@ function addEmoji(emoji) {
 }
 
 function draw() {
+    setNoUser();
     $('#personalinfo').html(makePersonalInfo());
     $('#chirps').html(makeChirps());
     // $('#alsolike').html(makeAlsoLike());
@@ -186,9 +192,10 @@ $('#writechirp').on('submit', function(event) {
 });
 
 function setFeed(response) {
-    PAGE_DATA = response;
+    // PAGE_DATA = response;
     go(response);
     draw();
+    setNoUser();
 }
 
 function setNoUser() {
@@ -201,6 +208,7 @@ $(function() {
     $.get(API_url + username + '/')
         .then(function handleResponse(response) {
             setFeed(response);
+            setNoUser();
         })
         .catch(function() {
             setNoUser();
@@ -223,15 +231,6 @@ function logout() {
     window.location.replace('login.html');
 }
 
-function go(response) {
-    PAGE_DATA = response;
-    console.log(PAGE_DATA);
-    $('#mypage').attr(
-        'href',
-        'feed.html?username=' + PAGE_DATA.chirper.username
-    );
-}
-
 $('#user-search').on('submit', function search(event) {
     event.preventDefault();
     var username = $('#username').val();
@@ -239,7 +238,7 @@ $('#user-search').on('submit', function search(event) {
         'https://bcca-chirper.herokuapp.com/api/' + $('#username').val() + '/'
     )
         .then(function handleFeedResponse(response) {
-            window.location.replace('other-feed.html?username=' + username);
+            window.location = 'other-feed.html?username=' + username;
         })
         .catch(function() {
             $('.container').html('<h1>' + username + 'does not exist.</h1>');

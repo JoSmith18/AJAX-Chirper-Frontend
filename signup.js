@@ -10,7 +10,7 @@ function signUp() {
     )
         .then(function handleFeedResponse(response) {
             window.location.replace(
-                'index.html?username=' + $('#username').val()
+                'feed.html?username=' + $('#username').val()
             );
         })
         .catch(function handleFeedError(response) {

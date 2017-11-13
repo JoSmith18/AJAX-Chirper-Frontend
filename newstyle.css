@@ -10,19 +10,19 @@ hr {
     color: black;
 }
 
-.img {
+/* .img {
     border-radius: 50%;
     width: 200px;
     margin-top: -150px;
     border-style: solid;
     border-width: 5px;
     border-color: white;
-}
+} */
 
-.chirpimg {
+/* .chirpimg {
     border-radius: 50%;
     width: 50px;
-}
+} */
 
 .jumbotron,
 h1 {
@@ -84,7 +84,7 @@ th {
 
 .signup-btn {
     border-radius: 100px;
-    width: 392px;
+    width: 360px;
     border: 1px solid #317eac;
 }
 .navbar {
@@ -106,4 +106,8 @@ a {
     font: bolder;
     font-size: 24;
     color: #317eac;
+}
+
+.signuponlogin {
+    text-align: right;
 }

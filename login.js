@@ -1,8 +1,14 @@
 function login() {
-    $.get(
-        'https://bcca-chirper.herokuapp.com/api/' + $('#username').val() + '/'
+    $.post(
+        'https://bcca-chirper.herokuapp.com/api/login/',
+        JSON.stringify({
+            username: $('#username').val(),
+            password: $('#pwd').val()
+        })
     )
         .then(function handleFeedResponse(response) {
+            var key = response.key;
+            window.localStorage.setItem('key', key);
             window.location.replace(
                 'feed.html?username=' + $('#username').val()
             );
