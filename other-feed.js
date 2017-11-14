@@ -151,14 +151,13 @@ function pushChirp() {
         });
 }
 
-function go(response) {
-    PAGE_DATA = response;
-    console.log(PAGE_DATA);
-    $('#mypage').attr(
-        'href',
-        'feed.html?username=' + PAGE_DATA.chirper.username
-    );
-}
+// function go(response) {
+
+//     $('#mypage').attr(
+//         'href',
+//         'feed.html?username=' + PAGE_DATA.chirper.username
+//     );
+// }
 function loadUserInfo() {
     $('#tweets').text('0');
     $('#following').text('0');
@@ -192,8 +191,8 @@ $('#writechirp').on('submit', function(event) {
 });
 
 function setFeed(response) {
-    // PAGE_DATA = response;
-    go(response);
+    PAGE_DATA = response;
+    // go(response);
     draw();
     setNoUser();
 }
